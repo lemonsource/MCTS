@@ -42,10 +42,10 @@ class State
 {
 public:
 State()
-{                    //应该是一个初始化的工作
+{                    //初始化的工作
 for (int i = 0; i<SideLength; i++)
 {
-memset(board[i], Empty, sizeof(board[i]));//初始化？？？？？？
+memset(board[i], Empty, sizeof(board[i]));//初始化
 }
 ColorToPlay = Black;
 StoneNum[0] = StoneNum[1] = 0;
@@ -72,7 +72,7 @@ class State
 		{                    //一个初始化的工作
 			for (int i = 0; i<SideLength; i++)
 			{
-				memset(board[i], Empty, sizeof(board[i]));//初始化？？？？？？
+				memset(board[i], Empty, sizeof(board[i]));//初始化
 			}
 			ColorToPlay = Black;  //初始化当前使用的是黑色的棋子
 			StoneNum[0] = StoneNum[1] = 0;
@@ -252,7 +252,7 @@ public:
 	bool PutStone(_Coordinate pos, int color)
 	{
 		if (pos == make_pair(-1, -1)) return true;
-		_GridType temp = (color == White ? WhiteStone : BlackStone); //存储当前的color，这难道不应该都是黑色的吗（1）？？？？？？
+		_GridType temp = (color == White ? WhiteStone : BlackStone); //存储当前的color
 		pair<_Coordinate, bool> res;
 		_Coordinate np;
 		bool flag = false;
@@ -412,7 +412,7 @@ public:
 		return;
 	}
 
-	//好像是颗树
+	//是颗树
 	int MiniMax(_Color color, int alpha, int beta)
 	{
 		if (isEnd()) 
